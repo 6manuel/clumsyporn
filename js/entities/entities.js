@@ -12,7 +12,7 @@ game.BirdEntity = me.Entity.extend({
         this.maxAngleRotationDown = Number.prototype.degToRad(50);
         this.renderable.addAnimation("flying", [0, 1, 2]);
         this.renderable.addAnimation("idle", [0]);
-        this.renderable.setCurrentAnimation("flying");
+        this.renderable.setCurrentAnimation("idle");
         this.renderable.anchorPoint.set(0.5,0.5);
         this.body.removeShapeAt(0);
         this.body.addShape(new me.Ellipse(5, 5, 71, 51));
@@ -121,10 +121,10 @@ game.PipeEntity = me.Entity.extend({
     init: function(x, y) {
         var settings = {};
         settings.image = this.image = me.loader.getImage('pipe');
-        settings.width = 148;
-        settings.height= 1664;
-        settings.framewidth = 148;
-        settings.frameheight = 1664;
+        settings.width = 118;
+        settings.height= 1349;
+        settings.framewidth = 118;
+        settings.frameheight = 1349;
 
         this._super(me.Entity, 'init', [x, y, settings]);
         this.alwaysUpdate = true;
@@ -155,7 +155,8 @@ game.PipeGenerator = me.Renderable.extend({
         this.alwaysUpdate = true;
         this.generate = 0;
         this.pipeFrequency = 92;
-        this.pipeHoleSize = 1240;
+        // this.pipeHoleSize = 1240;
+        this.pipeHoleSize = 1260;
         this.posX = me.game.viewport.width;
     },
 
